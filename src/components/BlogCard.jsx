@@ -3,16 +3,19 @@ import Title from './Title'
 import Subtitle from './Subtitle'
 import MuiListItem from './MuiListItem'
 import Stack from '@mui/material/Stack'
+import { Link } from 'react-router-dom'
 
 
-const BlogCard = ({title, snippet}) => {
+const BlogCard = ({blog}) => {
     return (
-        <MuiListItem>
-            <Stack display={'blog'}>
-                <Title text ={title}/>
-                <Subtitle text={snippet}/>
-            </Stack>
-        </MuiListItem>
+        <Link to={'blog'} state={{blog}}>   
+            <MuiListItem>
+                <Stack display={'blog'}>
+                    <Title text ={blog.title}/>
+                    <Subtitle text={blog.snippet}/>
+                </Stack>
+            </MuiListItem>
+        </Link>
     )
 }
 

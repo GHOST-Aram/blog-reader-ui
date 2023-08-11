@@ -24,11 +24,7 @@ const Blogs = () => {
                 {
                     (blogs.length > 0 && !isError) && 
                     blogs.map(blog =>(
-                        <BlogCard  
-                            key ={blog._id}
-                            title = {blog.title} 
-                            snippet={blog.snippet} 
-                        />  
+                        <BlogCard  key ={blog._id} blog={blog}/>  
                     )) 
                 } 
                 {
